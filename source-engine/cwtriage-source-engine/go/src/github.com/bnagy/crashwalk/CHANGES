@@ -1,0 +1,55 @@
+Apr 24, 2015:
+
+- Add json and protobuf output options to afl-triage. With the new options,
+  each crash is emitted as a single line, marshalled as either JSON or a
+  protobuf "compact string", suitable for piping to another process.
+
+Jun 17, 2015:
+
+- Add MemoryLimit and Timeout options to CrashwalkConfig struct
+- Add corresponding -t and -mem options to afl-triage
+- Change signature of Debugger interface ( internal / API change)
+- -auto flag now automatically sets memory limit from afl's README.txt
+- Fix some stupid hang bugs in the gdb engine
+
+Jun 26, 2015:
+
+- Fix a parsing bug in the gdb engine for the "faulting frame" struct
+
+Jun 28, 2015:
+
+- Add cwfind and cwdump commands
+- Rename afl-triage to cwtriage
+
+Jul 15, 2015:
+
+- Rename -auto option to -afl
+- Add -ignore option to cwtriage to skip whole dirs
+
+August 13, 2015:
+
+- cwtriage - add support for triaging targets that take input over stdin
+- this fix required breaking the Debugger interface, so francis also needs
+  an update.
+
+August 28, 2015:
+
+- cwtriage - substitute @@ markers inside argument strings (Issue #5)
+- cwtriage - add -tidy flag to move crashes that don't repro in cwtidy directories
+
+September 2, 2015:
+
+- cwtriage - change the location of tidied crashes. Now in .cwtidy inside the crash dir.
+
+September 6, 2015:
+
+- Add limited -f support, see README.md
+
+November 5, 2015:
+
+- -afl now picks up -m and -f options from README.txt
+- (internal) crashwalk now dispatches job options per job instead of via global config
+
+January 20, 2015:
+
+- the GDB exploitable plugin can now be located using the CW_EXPLOITABLE environment variable (PR #10 zuBux)
