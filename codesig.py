@@ -1,3 +1,4 @@
+#Messy PoC for code signature translocation. "Patched" (?) in 11.0
 import lief, sys
 
 
